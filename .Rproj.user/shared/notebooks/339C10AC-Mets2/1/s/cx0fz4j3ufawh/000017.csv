@@ -1,0 +1,23 @@
+"0",""
+"0","Degrom_Run_Support <- read_csv(""Degrom Run Support.csv"")"
+"1","[1mRows: [22m[34m162[39m [1mColumns: [22m[34m3[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (1): Degrom Game Starts
+[32mdbl[39m (2): Gm#, R
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","DegromRS = data.frame(Degrom_Run_Support)"
+"0",""
+"0","Starts = as.numeric(DegromRS$Degrom.Game.Starts, na.rm = TRUE)"
+"2","Warning:"
+"2"," NAs introduced by coercion
+"
+"0","Starts = Starts[1:32]"
+"0","DegromRS$Degrom.Game.Starts[DegromRS$Gm.[Starts]] = ""DeGrom"""
+"0","DegromRS$Degrom.Game.Starts[-DegromRS$Gm.[Starts]] = ""Others"""
+"0","DegromRS"

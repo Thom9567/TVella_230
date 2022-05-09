@@ -1,0 +1,2440 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>My Website: A taste of the trials and tribulations involving the Mets</title>
+
+
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="My Website: A taste of the trials and tribulations involving the Mets"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="My Website"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="My Website: A taste of the trials and tribulations involving the Mets"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["A taste of the trials and tribulations involving the Mets"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  </style>
+
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description || ''}
+                  </div>
+                  <div class="search-item-preview">
+                    ${img}
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  .nav-search {
+    font-size: x-small;
+  }
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"A taste of the trials and tribulations involving the Mets","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">My Website</a>
+</div>
+<div class="nav-right">
+<a href="about.html">About</a>
+<a href="Pastvisualizations.html">Past Visualizations</a>
+<a href="Mets2.html">Data Story</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>A taste of the trials and tribulations involving the Mets</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<p>You could call me a late bloomer when it comes to baseball. I played
+it as a kid up until about the 5th grade before I got more involved with
+other sports; I never really enjoyed or cared much for the game until I
+was much older. I was re-intoduced to baseball rather reluctantly
+through my friends, notably after years of trying to blow them and the
+sport off. When I did inevitably revisit it, I had a new-found sense of
+appreciation for the game, and after a lot of deliberation/persuasion
+from my Met and Yankee friends, I decided to lock myself in as a Met
+fan. This was in the 2018, my senior year of high school. Despite only
+diligently watching the Mets for the better half of 4 seasons, I have
+witnessed an obscene amount of horror and heartbreak that I think could
+be nicely summarized through the use of data visualizations. The sheer
+improbability of the events that we will discuss in this piece have
+acted as sort of therapeutic remedy for me, and I hope that you too will
+derive some enjoyment out of this personal project.</p>
+<p>This will focus primarily on two major Metropolitan events that I
+have experienced firsthand since rejoining the world of baseball. The
+nature of these two events are rather different in terms of what they
+describe, but are unified in the fact that they somehow both happened to
+the mets in teh short span of 3 years. The first major event we will
+discuss will be the most recent of the two, that being the story of the
+2020 Mets.</p>
+<h2 id="the-2020-mets">The 2020 Mets</h2>
+<p>As we are all too well aware of by now, 2020 was an extremely
+difficult and strange year for all of us; major league baseball was no
+different. Let’s first set the scene: Due to Covid-19 and some other
+collective bargaining issues, as opposed to playing a normal 162 regular
+season game schedule, the league opted to instead play 60. By reducing
+the regular season to about 37% of its normal length, this obviously
+meant that teams would not be given the chance to recover from a slow
+start. The league recognized this and their response was to change the
+playoff format to something completely unprecedented and likely never to
+return: they were extremely lenient and allowed over half the league to
+qualify for the playoffs that year (16/30 teams). Baseball is notorious
+for having very small playoff fields, which is something that we will
+later touch on, and this one season remedy appeared to be fair enough
+for what the individual teams had been given.</p>
+<p>That idea, and the assumption that the 2020 season wouldn’t produce
+such wild results given the leagues accomodations, proved to be
+unequivocally false, and the 2020 Mets are the leading reason as to why.
+The Mets led MLB in batting average, were second in on-base percentage,
+and were fourth in slugging (total bases per at bat) percentage. By
+nearly any metric, they were an elite offense. These metrics can be
+nicely summarized by a statistic called “Weighted Runs Created”, which
+essentially boils down to how many runs a team created through their
+offensive output. Every outcome at the plate has a specific run value
+associated with it: if you hit a double, then you have “created” some
+level of scoring for your team, whether or not that single event
+actually results in anything tangible on the scoreboard. The same can be
+said for negative outcomes such as strikeouts, by doing so you have hurt
+your teams ability to score and have “created” an opportunity to score
+less. Weighted Runs Created, WRC, is a very powerful stat for this
+reason; it gives a much better indicication of how good an offense
+actually is over how many runs they actually score, and is directly
+calculated using the team batting statistics that I noted the Mets led
+the league in earlier, those being batting average, on base percentage,
+and slugging percentage. Therefore, it makes sense that the 2020 Mets
+led all of major league baseball in runs created.</p>
+<p>Something worth noting about Weighted Runs Created is that it is a
+cumulative statistic; the more games you play the higher the value would
+be. This means that the worst offense in the 2019 season would register
+a higher WRC than the 2020 Mets simply because they have played more
+games. Therefore we need a new stat that will allow us to compare across
+different seasons and perhaps even different eras, which is exactly what
+WRC+ does. As opposed to calculating the efficiency of an offense
+cumulatively, WRC+ compares their statistics across the other teams
+playing that year, and spits out a number to quantify how good they were
+for that season of play. The way this statistic works is very different
+than other traditional statistics. In the realm of WRC+, since it is a
+comparative statistic that is quantifying for that specific year, it is
+calculated in such a way that a score of 100 is league average and
+anything above or below represents the percentage difference they are
+from league average. For example, a WRC+ rating of 150 means that this
+specific player or team was a 50% better hitter than league average,
+while a rating of 75 means that this player/team was 25% worse than
+league average.</p>
+<p>WRC+ therefore allows us to quantify how good the 2020 Mets were at
+hitting against teams from other years and even completely different
+eras of baseball. The 2020 Mets had a team WRC+ of 123, which is the
+fifth highest measure of all time! They were not only good for the 2020
+season, but they were supposedly one of the best offenses of all time.
+If it hasn’t been painfully clear where this has been going yet, let me
+get to the punchline: The 2020 Mets did not produce the way they were
+supposed to offensively. In matter of fact, despite having what
+should’ve been the 5th best offense in the history of baseball, they
+missed the playoffs in a year in which over the half the league
+qualified. Let’s take a look at our first graph representing this
+tradegy, which is a scatterplot showing WRC+ and Actual Runs scored for
+the 2020 season.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<p>Can you figure out which point is the Mets? You may look at this
+graph and think to yourself why is it that WRC+ seems to do a worse job
+predicting the actual Runs scored of teams with exceptionally high WRC+
+scores? Is it possible that its predictive value begins to break down as
+we reach more and more potent offenses? The answer is no. The reasoning
+behind this comes from the fact that the Mets represent such an extreme
+outlier that they are greatly warping the line of best fit. Let’s take a
+look at what the data looks like when we remove the Mets from our
+analysis.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<p>You are hopefully looking at this as dumbfounded as I first was. How
+could it be that such a powerful offense, one that was tasked at
+creating runs at a historic level, fail to actually score runs? The
+reasoning, outside of the Mets being the Mets, comes from the a
+shortfall in the way WRC+ is calculated that is often never a problem
+but was perhaps exacerbated by the significantly shortened season; that
+problem being sequencing.</p>
+<p>Consider the following scenario: When a team goes up to bat,they draw
+a walk, hit a single, and hit a home run before the inning is ended.
+These facts alone cannot tell you how many runs the team scored. The
+sequence of events here matter. If the home run happens first, only 1
+run will score, but if the walk and single happen prior to the home run
+then 3 runs will score. WRC and WRC+ have proven to be good measures of
+offensive production since their inception, so its more than possible
+that sequencing would’ve played a larger impact here. With that being
+said, this doesn’t make the Mets infallible. The 2020 Mets as a team
+preformed considerably worse with runners in scoring position, that
+being a player on second or third base. Their triple slash, which again
+led the league over the course of the season at .272/.348/.459 (batting
+average/on-base percentage/slugging percentage) fell to .245/.328/.406
+with runners in scoring position and to a pathetic .224/.310/344 in
+scoring circumstances with 2 outs. This can effectively account for the
+sequencing issue, but this paints a much different picture; the Mets
+were so unbelievably good at hitting when the bases were empty but
+became inexplicably much worse when the the bases had action. This is
+historically not the case; pitchers are at a disadvantage in scenarios
+where the bases aren’t empty. The Mets were simply so much worse in
+clutch hitting scenarios that every inning felt like a “bad sequence”,
+when in reality it was just the way the team functioned. It is
+improbable and inexplicable, but also doesn’t paint a full picture as to
+why the 2020 Mets failed to live up to their expectations.</p>
+<p>Despite their struggles to live up to the hype, the Mets offense was
+in the top half of the league in terms of actual runs scored. Another
+thing you may be thinking about at this point is how good, or really how
+bad, the Mets pitching must have been to keep them out an expanded
+playoff field. Their pitching staff wasn’t spectacular, but it wasn’t
+horrible either. One of my favorite equations as it relates to baseball
+in the Pythagorean Expectation formula, which gives an expected winning
+percentage of a team by using just the runs they scored and the runs
+they allowed. This allows us to play the game of seeing where the 2020
+Mets would’ve ended up if their offense met expectations, if we replace
+actual runs scored with weighted runs created. Would they have made the
+playoffs, or was their pitching so bad that it isn’t even worth
+discussing? I’m sure you already know the answer by now, but check out
+the graph of each team with their actual wins plotted against their
+expected wins when we replace their actual runs scored with their
+weighted runs created. The Mets again under-preformed by the widest
+margin, and would’ve made the cut.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-8735641939bfe0fab47c" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8735641939bfe0fab47c">{"x":{"visdat":{"ea818a00916":["function () ","plotlyVisDat"]},"cur_data":"ea818a00916","attrs":{"ea818a00916":{"x":{},"y":{},"text":{},"color":{},"colors":["#A71930","#CE1141","#DF4601","#BD3039","#0E3386","#27251F","#C6011F","#0C2340","#33006F","#0C2340","#002D62","#004687","#BA0021","#005A9C","#00A3E0","#FFC52F","#002B5C","#FF5910","#003087","#003831","#E81828","#FDB827","#C41E3A","#005C5C","#FD5A1E","#C41E3A","#8FBCE6","#003278","#134A8E","#AB0003"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Pythagorean Wins vs Actual Wins","plot_bgcolor":"#e5ecf6","xaxis":{"domain":[0,1],"automargin":true,"title":"Pythagorean Wins"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Actual Wins"},"legend":{"title":{"text":"<b> Team Name/Color <\/b>"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[26],"y":[25],"text":"Team:  ARI <br>Actual Wins: 25 <br>Expected Wins: 26","type":"scatter","mode":"markers","name":"ARI","marker":{"color":"rgba(167,25,48,1)","line":{"color":"rgba(167,25,48,1)"}},"textfont":{"color":"rgba(167,25,48,1)"},"error_y":{"color":"rgba(167,25,48,1)"},"error_x":{"color":"rgba(167,25,48,1)"},"line":{"color":"rgba(167,25,48,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[37],"y":[35],"text":"Team:  ATL <br>Actual Wins: 35 <br>Expected Wins: 37","type":"scatter","mode":"markers","name":"ATL","marker":{"color":"rgba(206,17,65,1)","line":{"color":"rgba(206,17,65,1)"}},"textfont":{"color":"rgba(206,17,65,1)"},"error_y":{"color":"rgba(206,17,65,1)"},"error_x":{"color":"rgba(206,17,65,1)"},"line":{"color":"rgba(206,17,65,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[29],"y":[25],"text":"Team:  BAL <br>Actual Wins: 25 <br>Expected Wins: 29","type":"scatter","mode":"markers","name":"BAL","marker":{"color":"rgba(223,70,1,1)","line":{"color":"rgba(223,70,1,1)"}},"textfont":{"color":"rgba(223,70,1,1)"},"error_y":{"color":"rgba(223,70,1,1)"},"error_x":{"color":"rgba(223,70,1,1)"},"line":{"color":"rgba(223,70,1,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[27],"y":[24],"text":"Team:  BOS <br>Actual Wins: 24 <br>Expected Wins: 27","type":"scatter","mode":"markers","name":"BOS","marker":{"color":"rgba(189,48,57,1)","line":{"color":"rgba(189,48,57,1)"}},"textfont":{"color":"rgba(189,48,57,1)"},"error_y":{"color":"rgba(189,48,57,1)"},"error_x":{"color":"rgba(189,48,57,1)"},"line":{"color":"rgba(189,48,57,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[32],"y":[34],"text":"Team:  CHC <br>Actual Wins: 34 <br>Expected Wins: 32","type":"scatter","mode":"markers","name":"CHC","marker":{"color":"rgba(14,51,134,1)","line":{"color":"rgba(14,51,134,1)"}},"textfont":{"color":"rgba(14,51,134,1)"},"error_y":{"color":"rgba(14,51,134,1)"},"error_x":{"color":"rgba(14,51,134,1)"},"line":{"color":"rgba(14,51,134,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[37],"y":[35],"text":"Team:  CHW <br>Actual Wins: 35 <br>Expected Wins: 37","type":"scatter","mode":"markers","name":"CHW","marker":{"color":"rgba(39,37,31,1)","line":{"color":"rgba(39,37,31,1)"}},"textfont":{"color":"rgba(39,37,31,1)"},"error_y":{"color":"rgba(39,37,31,1)"},"error_x":{"color":"rgba(39,37,31,1)"},"line":{"color":"rgba(39,37,31,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[31],"y":[31],"text":"Team:  CIN <br>Actual Wins: 31 <br>Expected Wins: 31","type":"scatter","mode":"markers","name":"CIN","marker":{"color":"rgba(198,1,31,1)","line":{"color":"rgba(198,1,31,1)"}},"textfont":{"color":"rgba(198,1,31,1)"},"error_y":{"color":"rgba(198,1,31,1)"},"error_x":{"color":"rgba(198,1,31,1)"},"line":{"color":"rgba(198,1,31,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[35],"y":[35],"text":"Team:  CLE <br>Actual Wins: 35 <br>Expected Wins: 35","type":"scatter","mode":"markers","name":"CLE","marker":{"color":"rgba(12,35,64,1)","line":{"color":"rgba(12,35,64,1)"}},"textfont":{"color":"rgba(12,35,64,1)"},"error_y":{"color":"rgba(12,35,64,1)"},"error_x":{"color":"rgba(12,35,64,1)"},"line":{"color":"rgba(12,35,64,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[21],"y":[26],"text":"Team:  COL <br>Actual Wins: 26 <br>Expected Wins: 21","type":"scatter","mode":"markers","name":"COL","marker":{"color":"rgba(51,0,111,1)","line":{"color":"rgba(51,0,111,1)"}},"textfont":{"color":"rgba(51,0,111,1)"},"error_y":{"color":"rgba(51,0,111,1)"},"error_x":{"color":"rgba(51,0,111,1)"},"line":{"color":"rgba(51,0,111,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[21],"y":[23],"text":"Team:  DET <br>Actual Wins: 23 <br>Expected Wins: 21","type":"scatter","mode":"markers","name":"DET","marker":{"color":"rgba(12,35,64,1)","line":{"color":"rgba(12,35,64,1)"}},"textfont":{"color":"rgba(12,35,64,1)"},"error_y":{"color":"rgba(12,35,64,1)"},"error_x":{"color":"rgba(12,35,64,1)"},"line":{"color":"rgba(12,35,64,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[29],"y":[29],"text":"Team:  HOU <br>Actual Wins: 29 <br>Expected Wins: 29","type":"scatter","mode":"markers","name":"HOU","marker":{"color":"rgba(0,45,98,1)","line":{"color":"rgba(0,45,98,1)"}},"textfont":{"color":"rgba(0,45,98,1)"},"error_y":{"color":"rgba(0,45,98,1)"},"error_x":{"color":"rgba(0,45,98,1)"},"line":{"color":"rgba(0,45,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[28],"y":[26],"text":"Team:  KCR <br>Actual Wins: 26 <br>Expected Wins: 28","type":"scatter","mode":"markers","name":"KCR","marker":{"color":"rgba(0,70,135,1)","line":{"color":"rgba(0,70,135,1)"}},"textfont":{"color":"rgba(0,70,135,1)"},"error_y":{"color":"rgba(0,70,135,1)"},"error_x":{"color":"rgba(0,70,135,1)"},"line":{"color":"rgba(0,70,135,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[29],"y":[26],"text":"Team:  LAA <br>Actual Wins: 26 <br>Expected Wins: 29","type":"scatter","mode":"markers","name":"LAA","marker":{"color":"rgba(186,0,33,1)","line":{"color":"rgba(186,0,33,1)"}},"textfont":{"color":"rgba(186,0,33,1)"},"error_y":{"color":"rgba(186,0,33,1)"},"error_x":{"color":"rgba(186,0,33,1)"},"line":{"color":"rgba(186,0,33,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[44],"y":[43],"text":"Team:  LAD <br>Actual Wins: 43 <br>Expected Wins: 44","type":"scatter","mode":"markers","name":"LAD","marker":{"color":"rgba(0,90,156,1)","line":{"color":"rgba(0,90,156,1)"}},"textfont":{"color":"rgba(0,90,156,1)"},"error_y":{"color":"rgba(0,90,156,1)"},"error_x":{"color":"rgba(0,90,156,1)"},"line":{"color":"rgba(0,90,156,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[24],"y":[31],"text":"Team:  MIA <br>Actual Wins: 31 <br>Expected Wins: 24","type":"scatter","mode":"markers","name":"MIA","marker":{"color":"rgba(0,163,224,1)","line":{"color":"rgba(0,163,224,1)"}},"textfont":{"color":"rgba(0,163,224,1)"},"error_y":{"color":"rgba(0,163,224,1)"},"error_x":{"color":"rgba(0,163,224,1)"},"line":{"color":"rgba(0,163,224,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[28],"y":[29],"text":"Team:  MIL <br>Actual Wins: 29 <br>Expected Wins: 28","type":"scatter","mode":"markers","name":"MIL","marker":{"color":"rgba(255,197,47,1)","line":{"color":"rgba(255,197,47,1)"}},"textfont":{"color":"rgba(255,197,47,1)"},"error_y":{"color":"rgba(255,197,47,1)"},"error_x":{"color":"rgba(255,197,47,1)"},"line":{"color":"rgba(255,197,47,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[37],"y":[36],"text":"Team:  MIN <br>Actual Wins: 36 <br>Expected Wins: 37","type":"scatter","mode":"markers","name":"MIN","marker":{"color":"rgba(0,43,92,1)","line":{"color":"rgba(0,43,92,1)"}},"textfont":{"color":"rgba(0,43,92,1)"},"error_y":{"color":"rgba(0,43,92,1)"},"error_x":{"color":"rgba(0,43,92,1)"},"line":{"color":"rgba(0,43,92,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[33],"y":[26],"text":"Team:  NYM <br>Actual Wins: 26 <br>Expected Wins: 33","type":"scatter","mode":"markers","name":"NYM","marker":{"color":"rgba(255,89,16,1)","line":{"color":"rgba(255,89,16,1)"}},"textfont":{"color":"rgba(255,89,16,1)"},"error_y":{"color":"rgba(255,89,16,1)"},"error_x":{"color":"rgba(255,89,16,1)"},"line":{"color":"rgba(255,89,16,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[35],"y":[33],"text":"Team:  NYY <br>Actual Wins: 33 <br>Expected Wins: 35","type":"scatter","mode":"markers","name":"NYY","marker":{"color":"rgba(0,48,135,1)","line":{"color":"rgba(0,48,135,1)"}},"textfont":{"color":"rgba(0,48,135,1)"},"error_y":{"color":"rgba(0,48,135,1)"},"error_x":{"color":"rgba(0,48,135,1)"},"line":{"color":"rgba(0,48,135,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[34],"y":[36],"text":"Team:  OAK <br>Actual Wins: 36 <br>Expected Wins: 34","type":"scatter","mode":"markers","name":"OAK","marker":{"color":"rgba(0,56,49,1)","line":{"color":"rgba(0,56,49,1)"}},"textfont":{"color":"rgba(0,56,49,1)"},"error_y":{"color":"rgba(0,56,49,1)"},"error_x":{"color":"rgba(0,56,49,1)"},"line":{"color":"rgba(0,56,49,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[30],"y":[28],"text":"Team:  PHI <br>Actual Wins: 28 <br>Expected Wins: 30","type":"scatter","mode":"markers","name":"PHI","marker":{"color":"rgba(232,24,40,1)","line":{"color":"rgba(232,24,40,1)"}},"textfont":{"color":"rgba(232,24,40,1)"},"error_y":{"color":"rgba(232,24,40,1)"},"error_x":{"color":"rgba(232,24,40,1)"},"line":{"color":"rgba(232,24,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[18],"y":[19],"text":"Team:  PIT <br>Actual Wins: 19 <br>Expected Wins: 18","type":"scatter","mode":"markers","name":"PIT","marker":{"color":"rgba(253,184,39,1)","line":{"color":"rgba(253,184,39,1)"}},"textfont":{"color":"rgba(253,184,39,1)"},"error_y":{"color":"rgba(253,184,39,1)"},"error_x":{"color":"rgba(253,184,39,1)"},"line":{"color":"rgba(253,184,39,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[38],"y":[37],"text":"Team:  SDP <br>Actual Wins: 37 <br>Expected Wins: 38","type":"scatter","mode":"markers","name":"SDP","marker":{"color":"rgba(196,30,58,1)","line":{"color":"rgba(196,30,58,1)"}},"textfont":{"color":"rgba(196,30,58,1)"},"error_y":{"color":"rgba(196,30,58,1)"},"error_x":{"color":"rgba(196,30,58,1)"},"line":{"color":"rgba(196,30,58,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[22],"y":[27],"text":"Team:  SEA <br>Actual Wins: 27 <br>Expected Wins: 22","type":"scatter","mode":"markers","name":"SEA","marker":{"color":"rgba(0,92,92,1)","line":{"color":"rgba(0,92,92,1)"}},"textfont":{"color":"rgba(0,92,92,1)"},"error_y":{"color":"rgba(0,92,92,1)"},"error_x":{"color":"rgba(0,92,92,1)"},"line":{"color":"rgba(0,92,92,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[32],"y":[29],"text":"Team:  SFG <br>Actual Wins: 29 <br>Expected Wins: 32","type":"scatter","mode":"markers","name":"SFG","marker":{"color":"rgba(253,90,30,1)","line":{"color":"rgba(253,90,30,1)"}},"textfont":{"color":"rgba(253,90,30,1)"},"error_y":{"color":"rgba(253,90,30,1)"},"error_x":{"color":"rgba(253,90,30,1)"},"line":{"color":"rgba(253,90,30,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[30],"y":[30],"text":"Team:  STL <br>Actual Wins: 30 <br>Expected Wins: 30","type":"scatter","mode":"markers","name":"STL","marker":{"color":"rgba(196,30,58,1)","line":{"color":"rgba(196,30,58,1)"}},"textfont":{"color":"rgba(196,30,58,1)"},"error_y":{"color":"rgba(196,30,58,1)"},"error_x":{"color":"rgba(196,30,58,1)"},"line":{"color":"rgba(196,30,58,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[37],"y":[40],"text":"Team:  TBR <br>Actual Wins: 40 <br>Expected Wins: 37","type":"scatter","mode":"markers","name":"TBR","marker":{"color":"rgba(143,188,230,1)","line":{"color":"rgba(143,188,230,1)"}},"textfont":{"color":"rgba(143,188,230,1)"},"error_y":{"color":"rgba(143,188,230,1)"},"error_x":{"color":"rgba(143,188,230,1)"},"line":{"color":"rgba(143,188,230,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[18],"y":[22],"text":"Team:  TEX <br>Actual Wins: 22 <br>Expected Wins: 18","type":"scatter","mode":"markers","name":"TEX","marker":{"color":"rgba(0,50,120,1)","line":{"color":"rgba(0,50,120,1)"}},"textfont":{"color":"rgba(0,50,120,1)"},"error_y":{"color":"rgba(0,50,120,1)"},"error_x":{"color":"rgba(0,50,120,1)"},"line":{"color":"rgba(0,50,120,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[29],"y":[32],"text":"Team:  TOR <br>Actual Wins: 32 <br>Expected Wins: 29","type":"scatter","mode":"markers","name":"TOR","marker":{"color":"rgba(19,74,142,1)","line":{"color":"rgba(19,74,142,1)"}},"textfont":{"color":"rgba(19,74,142,1)"},"error_y":{"color":"rgba(19,74,142,1)"},"error_x":{"color":"rgba(19,74,142,1)"},"line":{"color":"rgba(19,74,142,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[30],"y":[26],"text":"Team:  WSN <br>Actual Wins: 26 <br>Expected Wins: 30","type":"scatter","mode":"markers","name":"WSN","marker":{"color":"rgba(171,0,3,1)","line":{"color":"rgba(171,0,3,1)"}},"textfont":{"color":"rgba(171,0,3,1)"},"error_y":{"color":"rgba(171,0,3,1)"},"error_x":{"color":"rgba(171,0,3,1)"},"line":{"color":"rgba(171,0,3,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Earlier I mentioned how Weighted Runs Created + allows us to compare
+offenses from all kinds of different ERAs and how the 2020 Mets were
+supposedly the 5th greatest of all time. This got me wondering: how did
+the top 100 offenses preform each year? Did they make the playoffs in
+their respective seasons and if so did they win a World Series? How
+about whether or not any other top 100 offensive team would’ve missed
+the playoffs for their season if they were given the same luxuries as
+the 2020 Mets, where being in the top half of the league would’ve been
+enough to qualify? The following alluvial plot shows just that, where
+each team is initially seperated by league.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<p>I found this to be absolutely astonishing. Of the top 100 offenses,
+only 3 would have been able to not qualify in the 2020 playoffs. The 5th
+ranked 2020 Mets, the 71st ranked San Fransisco Giants, and the 97th
+ranked Texas Rangers.</p>
+<p>The 71st ranked Giants were also a 2020 team, but they had a
+considerably worse pitching staff and missed the playoffs by a
+tiebreaker to the Milwaukee Brewers. Their expected Pythagorean Wins was
+only 3 higher than what they actually achieved (as seen in the earlier
+graph). Sure this was a major disapointment, but it pales in comparison
+to that of the 2020 Mets.</p>
+<p>The other team, the 97th ranked Texas Rangers, are the only team on
+this list to play in a full season, that being 2008. Their offense lived
+up to the billing, but their pitching staff was far and away the worst
+in the major leagues that year; in matter of fact it was so bad that it
+actually negated the potency of their offense, which makes this result
+unsuprising.</p>
+<p>To further specifiy, of other top 99 offenses of all time, 97 of them
+would’ve qualified for the Mets postseason, 72 would’ve qualified for
+the postseason in their own era, notably in some of which only two teams
+made it, and 24 won a World Series. It’s hard to call the 2020 Mets
+season anything short of an absolute failure when looked at in
+comparison to other offenses of even remote caliber.</p>
+<h2 id="degrom">Degrom</h2>
+<p>The second moment I wanted to share and discuss doesn’t require such
+a grand introduction as the 2020 Mets. This takes place two years prior,
+in the 2018 season, in a normal year of baseball, which I’m still unsure
+makes this better or worse.</p>
+<p>One of the major reasons I chose this case study, other from the
+facts that it too is completely inexplicable and happened to the Mets,
+is how nicely it looks juxtaposed to the misery of the 2020 Mets; they
+really are just two different ways of telling the same story.</p>
+<p>In 2018, Jacob DeGrom had a historic season for a starting pitcher,
+and perhaps undeniably the best individual season of any starting
+pitcher over the past 5 years. There are many stats in baseball that can
+tell you how good a pitcher is, which we will see in not too long, but
+the one that matter most is “Earned Run Average”, or ERA for short. It
+isn’t a stat that relies on any sort of inference or expected outcome
+such as WRC and WRC+; its simply a count of how many runs said pitcher
+let up that he was responsible for. What constitutes responsible is
+really not worth discussing in this analysis, but let me preface by
+saying the overwhelming majority of runs scored in an MLB season fall
+under the category of “earned”, so there is no need to worry about any
+implications surrounding what it constitutes.</p>
+<p>So, based on the ERA of pitchers who pitched enough innings to
+qualify for MLB Awards (1 IP per team game played), Jacob DeGrom had the
+best ERA of any pitcher. Below is the histogram of ERA over the course
+of the past 5 seasons, and you can see that he sets the edge as the
+lowest ERA value present on this graph. Something that I found
+particularly interesting was that ERA appears to be normally
+distributed; this is not something I had ever considered or would’ve
+even thought.</p>
+<p>Also worth noting is the fact that the 5 year threshold was
+arbitrarily chosen; nothing wacky happened in that 6th year to
+invalidate these findings.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<p>So to answer the question of where the Mets being the Mets comes into
+question here comes from what came of such an extraordinary season by a
+pitcher. He let up the fewest amount of runs by any pitcher that year,
+so surely he must have had a dominant record, right? No. Despite doing
+everything he possibly could’ve DeGrom had a winning percentage of only
+55% in games that he started. This is astronomically low for the quality
+of pitching he produced. Again, how could this be possible? Sure, the
+Mets were bad that year and failed to miss the playoffs, but they
+weren’t this bad to warrant these kind of results.</p>
+<p>Before I show you the scatterplot of all pitcher winning percents
+against their ERA, let’s try and figure out why DeGrom underpreformed so
+heavily in the win column. Even in circumstances where he was lights
+out, he can’t record a win in starts where the Mets failed to give him
+any run support. Let’s take a look at how the Mets offense preformed in
+games started by DeGrom vs all other games in the 2018 season. The
+results describe the nightmare scenario we just depicted for an entire
+season:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-7-1.png" width="624" /><img src="Mets2_files/figure-html5/unnamed-chunk-7-2.png" width="624" /></p>
+</div>
+<p>In games that DeGrom started, the offense clearly preformed
+worse.</p>
+<p>I’d like to say, mainly for anyone unfamiliar with the concept of
+pitchers and them recording wins, is that it doesn’t mean as much today
+as in the past to have a poor win percent in the eyes of baseball
+analysts. The era of advanced stats has allowed us to look at pitcher
+wins as just a piece to the puzzle rather than the full solution to how
+good someone was that year. This is best evidenced by the fact that
+Jacob DeGrom won the 2018 Cy Young Award, which is voted on by baseball
+media members as the best individual pitcher that year, despite having a
+record no where near the top of the league. This is all great for
+DeGrom, but the losses still count towards the 2018 Mets record, and
+played a major role in the lack of their success that season.</p>
+<p>I mentioned earlier how a lot of pitching stats, some more involved
+than others, are all either loosely or directly related to each other.
+There is no stat directly related to win percent, but there are quite
+alot heavily related to ERA. Let’s take a look at the correlation matrix
+of some of baseball’s top pitching statistics and see if the quality of
+a pitcher has any indication on how many games they win or other
+peripheral measures of their success.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+<p>Let’s break down some terms you may be unfamiliar with:</p>
+<p>FIP - “Fielding Independent Pitching” is essentially another way to
+calculate a pitcher’s individual impact on his team, but is distinct
+from ERA in that it is more robust and places heavier weight on events
+completely within the pitchers control such as Home Runs and
+Strikeouts.</p>
+<p>ERA Plus - Identical in nature to WRC+ we discussed earlier, expect
+now in relation to pitcher ERAs.</p>
+<p>WHIP - “Walks, Hits, Innings Pitched” is a measure of how many
+runners a pitcher allows per inning. Naturally, the lower this number is
+the better.</p>
+<p>Any per 9 stats indicate the number of said stat the pitcher allows
+every 9 innings of work; this is done as a baseline which we can compare
+players across</p>
+<p>Now that we have a good idea of what we’re looking at, we can see
+that a lot of these indicators are strongly correlated, and all of which
+are moderately strong with win percent, the highest of which is just
+plain ERA, which makes sense. The more runs you allow, the less games
+you will win. This holds true over any other measure, whether they be
+walks or singles or any other negative stat.</p>
+<p>I think this chart is very interesting and delves into the beauty of
+baseball; any stat on it’s own isn’t really worth anything but we can
+check its accuracy by comparing them to other closely related stats and
+get a better picture of an individual player.</p>
+<p>A lot of these correlation values are obvious to anyone who is
+familiar with these terms and how they are calculated because they are
+all based off each other: of course ERA and ERA+ have an extremely high
+correlation coefficient, and the same can be said with walks allowed per
+nine and WHIP. One that is not dependent on each other but is
+exceptionally high is WHIP with ERA. They make sense when you think
+about it, as more base runners allowed will lead to more runs allowed,
+but the link is stronger than I initially imagined.</p>
+<p>All of this is to show and say that the failures of DeGrom in the
+2018 season should not represent anything close to a norm. He was an
+exceptional pitcher in 2018 and every possible pitching metric backs
+that claim up. The fact that he only won 10 games in a season in which
+he started 34 games (missing number in win/loss column represent no
+decisions, which are games in which DeGrom left the game tied) is just
+tragic. Of all the graphs I made for this project, I found this one to
+be the most comical; I’m sure you can figure out where DeGrom is listed
+on this scatter plot of ERA against win percent.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+</div>
+<p>And just for the sake of it, let’s see what this would look like if
+we remove DeGrom from this 5 year analysis</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="Mets2_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<p>These two events represent some of the most improbable events in the
+history of baseball, and the fact that they happened within a 3 year
+span to the same team is what is so beautiful and horrifying about the
+game of baseball.</p>
+<h3 id="i-hope-you-enjoyed-this-exhibition">I hope you enjoyed this
+exhibition</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+"0","##pythagorean win loss with some kind of classification to show how many wins teams needed this year to make the playoffs and show how they would've reached it add horizontal line?"
+"0",""
+"0","plot_ly("
+"0","  Season2020, x = ~Pythag, y = ~W,"
+"0","  # Hover text:"
+"0","  text = ~paste(""Team: "", Team, '<br>Actual Wins:', W, '<br>Expected Wins:', Pythag),"
+"0","  color = ~Team, colors = TmColors"
+"0",")%>%"
+"0","  layout(title = 'Pythagorean Wins vs Actual Wins', plot_bgcolor = ""#e5ecf6"", xaxis = list(title = 'Pythagorean Wins'), "
+"0","         yaxis = list(title = 'Actual Wins'), legend = list(title=list(text='<b> Team Name/Color </b>')))"
+"2","No trace type specified:
+  Based on info supplied, a 'scatter' trace seems appropriate.
+  Read more about this trace type -> https://plotly.com/r/reference/#scatter
+"
+"2","No scatter mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"
+"2","No trace type specified:
+  Based on info supplied, a 'scatter' trace seems appropriate.
+  Read more about this trace type -> https://plotly.com/r/reference/#scatter
+"
+"2","No scatter mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"

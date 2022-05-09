@@ -1,0 +1,9 @@
+"0",""
+"0","ggplot(Season2020.2, aes(x = wRC., y = R)) + "
+"0","  geom_point() + "
+"0","  geom_smooth(method = ""loess"") +"
+"0","  xlab(""Weighted Runs Created +"") +"
+"0","  ylab(""Runs Scored"") +"
+"0","  ggtitle(""Relationship between WRC+ and Runs Scored in 2020 MLB Season"")"
+"2","`geom_smooth()` using formula 'y ~ x'
+"

@@ -1,0 +1,8 @@
+"0",""
+"0","##ERA Histogram of the past 5 years"
+"0",""
+"0","ggplot(IndividualPlayerPitching, aes(x = ERA, y = ..density..)) +"
+"0","  geom_histogram(binwidth = .1, aes(fill = ..count..)) +"
+"0","  geom_density() +"
+"0","  xlab(""Earned Run Average"")"
+"0",""

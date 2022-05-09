@@ -1,0 +1,8 @@
+"0","ggplot(Season2020.3, aes(x = wRC., y = R)) + "
+"0","  geom_point() + "
+"0","  geom_smooth(method = ""loess"")+"
+"0","  xlab(""Weighted Runs Created +"") +"
+"0","  ylab(""Runs Scored"") +"
+"0","  ggtitle(""WRC+ and Runs Scored in 2020 Season, without the Mets"")"
+"2","`geom_smooth()` using formula 'y ~ x'
+"

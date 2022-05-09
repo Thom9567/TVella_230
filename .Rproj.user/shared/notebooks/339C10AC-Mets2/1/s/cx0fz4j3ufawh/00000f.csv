@@ -1,0 +1,131 @@
+"0","library(readr)"
+"0","library(ggcorrplot)"
+"2","Loading required package: ggplot2
+"
+"0","library(ggplot2)"
+"0","library(plotly)"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"2","
+Attaching package: ‘plotly’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    layout
+
+"
+"0","library(ggalluvial)"
+"0",""
+"0","Pitching2020 <- read_csv(""2020 Season Data 2.csv"")"
+"1","[1mRows: [22m[34m30[39m [1mColumns: [22m[34m3[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (1): Team
+[32mdbl[39m (2): IP, R
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","Pitching2020 = data.frame(Pitching2020)"
+"0","Pitching2020$RA = Pitching2020$R"
+"0","Pitching2020$R = Pitching2020$RA"
+"0",""
+"0","Batting2020 <- read_csv(""2020 Season Data.csv"")"
+"1","[1mRows: [22m[34m30[39m [1mColumns: [22m[34m22[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (3): Team, BB%, K%
+[32mdbl[39m (18): G, PA, HR, R, RBI, SB, ISO, BABIP, AVG, OBP, SLG, wOBA, wRC+, BsR, Off, Def, WAR...
+[33mlgl[39m  (1): xwOBA
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","Batting2020 = data.frame(Batting2020)"
+"0",""
+"0","X2020_WL <- read_csv(""2020 WL.csv"")"
+"1","[1mRows: [22m[34m31[39m [1mColumns: [22m[34m36[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (1): Tm
+[32mdbl[39m (35): #P, PAge, RA/G, W, L, W-L%, ERA, G, GS, GF, CG, tSho, cSho, SV, IP, H, R, ER, HR...
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","WL = data.frame(X2020_WL)"
+"0","WL2 = WL[,-c(2:4,8:100)]"
+"0","WL3 = WL2[-31,]"
+"0",""
+"0","Season2020 = cbind(Batting2020, Pitching2020, WL3)"
+"0","Season2020$Team = factor(Season2020$Team)"
+"0","Season2020 = Season2020[-24]"
+"0",""
+"0","Season2020$R/Season2020$RA"
+"1"," [1]"
+"1"," 0.9118644"
+"1"," 1.2083333"
+"1"," 0.9319728"
+"1"," 0.8319088"
+"1"," 1.1041667"
+"1"," 1.2439024"
+"1"," 1.0000000"
+"1"," 1.1866029"
+"1"," 0.7790368"
+"1","
+"
+"1","[10]"
+"1"," 0.7830189"
+"1"," 1.0145455"
+"1"," 0.9117647"
+"1"," 0.9158879"
+"1"," 1.6384977"
+"1"," 0.8651316"
+"1"," 0.9356061"
+"1"," 1.2511628"
+"1"," 0.9285714"
+"1","
+"
+"1","[19]"
+"1"," 1.1666667"
+"1"," 1.1810345"
+"1"," 0.9839228"
+"1"," 0.7348993"
+"1"," 1.3485477"
+"1"," 0.8382838"
+"1"," 1.0067340"
+"1"," 1.0480349"
+"1"," 1.2620087"
+"1","
+"
+"1","[28]"
+"1"," 0.7179487"
+"1"," 0.9679487"
+"1"," 0.9734219"
+"1","
+"
+"0","Season2020$Pythag = round((Season2020$wRC^2)/(Season2020$wRC^2+Season2020$RA^2)*60,0)"
+"0","Season2020"

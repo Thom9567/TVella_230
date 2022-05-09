@@ -1,0 +1,20 @@
+---
+title: "About this site"
+description: |
+  Some additional details about Thomas Vella and this website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This is the website for Thomas Vella, an undergraduate at Bucknell Univeristy. 
+
+I am currently majoring in the mathematics department seeking a Bachelors of Science in Statistics. I am set to graduate next fall.
+
+I am from Long Island, New York, and have a proclivity for New York Sports teams, as you will see soon enough. 
+
+My data story will focus on my relationship with Major League Baseball, particularly that of the team I root for. This data visualization story is representative of something personal to me. 
+
+
+

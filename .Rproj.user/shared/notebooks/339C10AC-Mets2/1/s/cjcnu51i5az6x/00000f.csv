@@ -1,0 +1,10 @@
+"0","NoDegrom = IndividualPitching[-158,]"
+"0",""
+"0","ggplot(NoDegrom, aes(x = ERA.., y = W.L.)) + "
+"0","  geom_point() + "
+"0","  geom_smooth(method = ""loess"") +"
+"0","  ylab(""Win Percentage"") +"
+"0","  xlab(""Earned Run Average"") +"
+"0","  ggtitle(""Win Percent & ERA over the past 5 years, without DeGrom"")"
+"2","`geom_smooth()` using formula 'y ~ x'
+"

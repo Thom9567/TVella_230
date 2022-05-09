@@ -1,0 +1,16 @@
+name: "my-website"
+title: "My Website"
+description: |
+  My Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "About"
+      href: about.html
+    - text: "Past Visualizations"
+      href: Pastvisualizations.html
+    - text: "Data Story"
+      href: Mets2.html
+output: distill::distill_article
+
+

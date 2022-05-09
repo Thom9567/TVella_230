@@ -1,0 +1,10 @@
+"0","##next talk about how many games he won yadayada"
+"0",""
+"0","ggplot(IndividualPitching, aes(x = ERA.., y = W.L.)) + "
+"0","  geom_point() + "
+"0","  geom_smooth(method = ""loess"") +"
+"0","  ylab(""Win Percentage"") +"
+"0","  xlab(""Earned Run Average"") +"
+"0","  ggtitle(""Win Percent and ERA among qualified pitchers over the past 5 years"")"
+"2","`geom_smooth()` using formula 'y ~ x'
+"

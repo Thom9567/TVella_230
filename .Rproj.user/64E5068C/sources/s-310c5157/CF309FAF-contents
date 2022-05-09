@@ -1,0 +1,140 @@
+---
+title: "The 2020 Mets"
+---
+
+
+```{r, echo = FALSE}
+library(ggplot2)
+library(distill)
+```
+
+
+
+
+```{r}
+library(readr)
+Pitching2020 <- read_csv("2020 Season Data 2.csv")
+
+Pitching2020 = data.frame(Pitching2020)
+Pitching2020$RA = Pitching2020$R
+Pitching2020$R = Pitching2020$RA
+
+Batting2020 <- read_csv("2020 Season Data.csv")
+Batting2020 = data.frame(Batting2020)
+
+X2020_WL <- read_csv("2020 WL.csv")
+WL = data.frame(X2020_WL)
+WL2 = WL[,-c(2:4,8:100)]
+WL3 = WL2[-31,]
+
+Season2020 = cbind(Batting2020, Pitching2020, WL3)
+Season2020 = Season2020[-24]
+
+Season2020$R/Season2020$RA
+Season2020$Pythag = (Season2020$wRC^2)/(Season2020$wRC^2+Season2020$RA^2)*60
+Season2020
+
+DeGrom2018 <- read_csv("Degrom Final.csv")
+Degrom2018 = data.frame(DeGrom2018)
+Degrom2018 = Degrom2018[-(59:1028),]
+Degrom2018
+
+Degrom_Run_Support <- read_csv("Degrom Run Support.csv")
+DegromRS = data.frame(Degrom_Run_Support)
+
+X2019_Pitching <- read_csv("2019 Pitching.csv")
+PlayerPitching2019 = data.frame(X2019_Pitching)
+PlayerPitching2019 = PlayerPitching2019[-(63:10000),]
+Degrom2018 = Degrom2018[-1]
+
+X2021_Pitching <- read_csv("2021 Pitching.csv")
+PlayerPitching2021 = data.frame(X2021_Pitching)
+PlayerPitching2021 = PlayerPitching2021[-(40:10000),]
+
+X2017_Pitching <- read_csv("2017 Pitching.csv")
+PlayerPitching2017 = data.frame(X2017_Pitching)
+PlayerPitching2017 = PlayerPitching2017[-(60:10000),]
+
+
+Names = c(Degrom2018$Name, PlayerPitching2019$Name, PlayerPitching2021$Name, PlayerPitching2017$Name)
+ERA = c(Degrom2018$ERA.., PlayerPitching2019$ERA.., PlayerPitching2021$ERA.., PlayerPitching2017$ERA..)
+ERA
+
+Degrom2018[-1]
+
+IndividualPlayerPitching = data.frame(Names, ERA)[-c(43,111, 152, 201, 173),]
+
+IndividualPlayerPitching
+
+PlayerPitching2021
+PlayerPitching2019
+PlayerPitching2017
+Season2020 = read.csv("2020 Season Data.csv", header = TRUE, sep = ",")
+ggplot(Season2020, aes(x = wRC., y = R)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+##pythagorean win loss with some kind of classification to show how many wins teams needed this year to make the playoffs and show how they would've reached it 
+
+
+
+#compare to all time teams with similar wrc+, make it some type of qualitative analysis though to get a different graph, Maybe season outcomes.
+Degrom2018 = read.csv("Degrom Final.csv", header = TRUE, sep = ",")
+ggplot(Degrom2018, aes(x = ERA..)) +
+         geom_density()
+
+##next talk about how many games he won yadayada
+
+##violin plot of runs scored in degrom starts vs no degrom in 2018
+
+Season2020$Team = factor(Season2020$Team)
+ggplot(Season2020, aes(x = wRC., y = R)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+##pythagorean win loss with some kind of classification to show how many wins teams needed this year to make the playoffs and show how they would've reached it 
+Season2020$R/Season2020$RA
+Season2020$Pythag = (Season2020$wRC^2)/(Season2020$wRC^2+Season2020$RA^2)*60
+Season2020
+X2020_WL <- read_csv("2020 WL.csv")
+WL = data.frame(X2020_WL)
+WL2 = WL[,-c(2:4,8:100)]
+WL3 = WL2[-31,]
+ggplot(data=Season2020, aes(x=Team, y=Pythag)) +
+    geom_bar(stat="identity")
+
+
+ggplot(Season2020, aes(x = wRC., y = R)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+
+#compare to all time teams with similar wrc+, make it some type of qualitative analysis though to get a different graph, Maybe season outcomes.
+
+##ERA Histogram of the past 5 years
+
+ggplot(IndividualPlayerPitching, aes(x = ERA, y = ..density..)) +
+  geom_histogram(binwidth = .1, aes(fill = ..count..)) +
+  geom_density() +
+  xlab("Earned Run Average")
+##next talk about how many games he won yadayada
+
+##violin plot of runs scored in degrom starts vs no degrom in 2018
+ggplot(DegromRS, aes(x = Degrom.Game.Starts, y = R, fill = Degrom.Game.Starts)) + 
+  geom_boxplot() +
+  coord_flip() + 
+  guides(fill = "none")
+
+ggplot(DegromRS, aes(x = Degrom.Game.Starts, y = R, fill = Degrom.Game.Starts)) +
+  geom_violin(scale = "width", alpha = .5) +
+  guides(fill = "none") +
+  stat_summary(fun.data = "mean_sdl", fun.args = list(mult=1), geom = "pointrange", color = "red")
+
+plot_ly(
+  Season2020, x = ~W, y = ~Pythag,
+  # Hover text:
+  text = ~paste("Team: ", Team),
+  color = ~W, size = ~W
+)
+
+```
+
+
+

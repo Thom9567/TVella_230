@@ -1,0 +1,16 @@
+"0",""
+"0","DeGrom2018 <- read_csv(""Degrom Final.csv"")"
+"1","[1mRows: [22m[34m1028[39m [1mColumns: [22m[34m35[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (3): Name, Tm, Lg
+[32mdbl[39m (32): Rk, Age, W, L, W-L%, ERA ?, G, GS, GF, CG, SHO, SV, IP, H, R, ER, HR, BB, IBB, S...
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","Degrom2018 = data.frame(DeGrom2018)"
+"0","Degrom2018 = Degrom2018[-(59:1028),]"
+"0","Degrom2018"

@@ -1,0 +1,19 @@
+"0",""
+"0","TmColors = c(""#A71930"", ""#CE1141"", ""#DF4601"", ""#BD3039"", ""#0E3386"", ""#27251F"", ""#C6011F"", ""#0C2340"", ""#33006F"", ""#0C2340"", ""#002D62"", ""#004687"", ""#BA0021"", ""#005A9C"", ""#00A3E0"", ""#FFC52F"", ""#002B5C"", ""#FF5910"", ""#003087"", ""#003831"", ""#E81828"", ""#FDB827"", ""#C41E3A"", ""#005C5C"", ""#FD5A1E"", ""#C41E3A"", ""#8FBCE6"", ""#003278"", ""#134A8E"", ""#AB0003"")"
+"0",""
+"0","##Playoff WRC stuff, alot of it manually entered"
+"0","WRC_ <- read_csv(""WRC+.csv"")"
+"1","[1mRows: [22m[34m2602[39m [1mColumns: [22m[34m22[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (3): Team, BB%, K%
+[32mdbl[39m (18): Season, G, PA, HR, R, RBI, SB, ISO, BABIP, AVG, OBP, SLG, wOBA, wRC+, BsR, Off, ...
+[33mlgl[39m  (1): xwOBA
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","WRCplus = data.frame(WRC_)"
+"0","WRCplus"

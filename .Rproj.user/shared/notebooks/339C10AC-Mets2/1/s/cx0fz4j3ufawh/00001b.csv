@@ -1,0 +1,4 @@
+"0",""
+"0","IndividualPlayerPitching = data.frame(Names, ERA)[-c(43,111, 152, 201, 173),]"
+"0",""
+"0","IndividualPlayerPitching"
